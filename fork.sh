@@ -4,10 +4,19 @@ echo "new name: $1"
 echo "path to wp themes: $2"
 
 SFORK_PATH="$2/$1"
-#maybe check if a wp-conent/themes/ exists and select that dir so the base can be the root wp install
-
-
 SFORK_RESPONSE=
+
+
+#check if a wp-content/themes/ exists and select that dir so the base can be the root wp install
+if [ -d "$2/wp-content/themes" ]; then
+	echo -n "Place new theme in $2/wp-content/themes/$1 (y/n) > "
+	read SFORK_RESPONSE
+	if [ "$SFORK_RESPONSE" == "y" ]; then
+		SFORK_PATH="$2/wp-content/themes/$1"
+	fi
+fi
+
+
 if [ -d $SFORK_PATH ]; then
 	echo -n "Output folder exists. Overwrite? (y/n) > "
 	read SFORK_RESPONSE
@@ -19,7 +28,6 @@ else
 	echo "making: $SFORK_PATH"
 	mkdir $SFORK_PATH
 fi
-
 
 
 echo "copying _S to $SFORK_PATH"
