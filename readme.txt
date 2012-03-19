@@ -1,3 +1,12 @@
+=== fork.sh ===
+My changes include fork.sh. A simple bash script to help copy and rename all instances of _s.
+
+$fork.sh (New Name) (Path to themes folder)
+$fork.sh mytheme /var/www/wp-content/themes
+
+Optionaly you can point to the root of wordpress (i.e. /var/www).
+
+
 === _s ===
 
 Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
