@@ -3,8 +3,13 @@ echo "forking _s"
 echo "new name: $1"
 echo "path to wp themes: $2"
 
+
+#TODO: make sure gets atleast 1 argument (the name)
+#TODO: if just 1 argument, use enviorment path for Path argument
+
 SFORK_PATH="$2/$1"
 SFORK_RESPONSE=
+
 
 
 #check if a wp-content/themes/ exists and select that dir so the base can be the root wp install
